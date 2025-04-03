@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+        <style>
+        div{
+            font-family:Arial, Helvetica, sans-serif;
+            text-align:center;
+            margin:50px;
+            background-attachment: #1a245e;
+        }
+       
+        </style>
+   <div>
+    <h1> Automatic Motor Service </h1>
+   </div>
+    <h2>How it works:-</h2>
+    <h4>It can be designed for various applications such as automatic water pumps,smart irrigation systems, or motor contol in industries.
+         Below is a general working principle of particular sensors which are used name in this Automatic motor serives project using Arduino. </h4>
+    <P><b>1. L298N motor:-</b>
+        It works using H-Bridge circuits, which allows motor to spin forward, backward and stop the motor.
+        If 1st input is high and 2nd input is low then motor moves forward.
+        If 1st input is low and 2nd is high then motor moves backward.
+        If both inputs are low then motor stops or both inputs are high then motor breaks otherwise stops permanently.
+        </P>
+        <p>
+           <b>2. Ultrasonic Sensor:- </b>
+            It works for object detection, distance-based motor controlling based on distance measurement by formula.
+            Formula:- 
+            It uses for measure the distance of water detection for stop the DC motor automatically. </p>
+           <p><b> 3. DC Motor:- </b>
+            It control using L298N motor driver and Ultrasonic sensor when the Arduino can supply enough directly to the motor.
+            Depending on the signals received, the motor moves as per our requirement. </p>
+            
+            <p> <b>3. DC Motor:- </b>
+                It control using L298N motor driver and Ultrasonic sensor when the Arduino can supply enough directly to the motor.
+                Depending on the signals received, the motor moves as per our requirement.</p>
+                <p><b>4. Arduino UNO Board:- </b>
+                    It acts as brain of the systems, controlling the motor based on sensors inputs, user commands or pre-programmed logic .
+                    Based on the received data, the Arduino decides weather to start, stop, change direction or adjust the speed of the  motor also it can sends the signal to motor driver to control the system.
+                     </p>
+        <img src="image.png" alt="circuit diagram" width="500" height="500">
+        <h2>
+            Componants needed:-
+        </h2>
+        <h3>1. Arduino UNO </h3>
+        <h3>2. L298N motor driver</h3>
+        <h3>3. Ultrasonic Sensor</h3>
+        <h3>4. 5v battery</h3>
+        <h3>5. External power supply(9v)</h3>
+        <h3>6. Jumper cabels (M-M,M-F,F-F) </h3>
+        <h2>Algorithm:-</h2>
+        <p><b>Step 1: </b>Start.</p>
+        <p><b>Step 2: </b> Initialize Arduino and components:
+            Set up motor driver pins as OUTPUT.
+            Set up ultrasonic sensor pins as INPUT/OUTPUT.</p>
+        <p> <b>Step 3:</b> Measure distance using the ultrasonic sensor:
+            Sends a trigger pulse.
+            Receive echo pulse and calculate the distance.</p>
+        <p> <b>Step 4:</b> Check distance conditions:
+            If distance > 10cm, stops motor automatically.
+            If 1st motor stops, then it stops permanently’
+            If distance <= 20cm, starts motor automatically. </p>
+        <p> <b>Step 5:</b> Repeat steps continuously.</p>
+        <p> <b>Step 6:</b> Stop.</p> 
+        <h2>Flowchart:-</h2>
+        <img src="image2.png" alt="flowcchat" width="900" height="500">
+        <h2>Code:-</h2>
+        <code>#define IN1 9 
+            #define IN2 10
+            #define ENA 5  // PWM Pin for Speed Control
+            // Define Ultrasonic Sensor Pins
+            #define TRIG_PIN 6
+            #define ECHO_PIN 7
+            bool motorStopped = false;  // Flag to track if the motor has stopped permanently
+            void setup() {
+              // Set motor control pins as output
+              pinMode(IN1, OUTPUT);
+              pinMode(IN2, OUTPUT);
+              pinMode(ENA, OUTPUT);
+              // Set ultrasonic sensor pins
+              pinMode(TRIG_PIN, OUTPUT);
+              pinMode(ECHO_PIN, INPUT);
+              // Start motor at half speed
+              analogWrite(ENA, 150); // PWM range: 0 (off) to 255 (max speed)
+              Serial.begin(9600); // Initialize Serial Monitor
+            }
+            void loop() {
+              if (motorStopped) return;  // If motor is stopped, exit loop
+              long duration;
+              int distance;
+            #define IN1 9
+#define IN2 10
+#define ENA 5  // PWM Pin for Speed Control
+// Define Ultrasonic Sensor Pins
+#define TRIG_PIN 6
+#define ECHO_PIN 7
+bool motorStopped = false;  // Flag to track if the motor has stopped permanently
+void setup() {
+  // Set motor control pins as output
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(ENA, OUTPUT);
+  // Set ultrasonic sensor pins
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  // Start motor at half speed
+  analogWrite(ENA, 150); // PWM range: 0 (off) to 255 (max speed)
+  Serial.begin(9600); // Initialize Serial Monitor
+}
+void loop() {
+  if (motorStopped) return;  // If motor is stopped, exit loop
+  long duration;
+  int distance;
+
+</code>
+
+</body>
+</html>
