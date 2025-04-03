@@ -5,42 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <style>body
+    <style>
+    body
     {
-        font-family:Arial, Helvetica, sans-serif;
-        text-align:center;
-        margin:50px;
-    }
-    header{
-        background-attachment: #4caf50;
-        color:white;
-        padding:10px;
-    }
-    ul{
-        list-style-type:none;
+        font-family:'poppins, sans-serif';
+        margin:0;
         padding:0;
+        background-color: #f5f5f5;
+        text-align: center;
     }
-    li{
-        background: #f4f4f4;
-        margin:10px;
-        padding:15px;
-        border-radius: 5px;
+    nav{
+        background: #003366;
+        padding: 15px 0;
     }
-    a:hover{
-        text-decoration: underline;
- 
+    nav ul{
+        list-style: none;
+        padding: 0;
+    }
+    nav ul li{
+        display: inline;
+        margin: 0 20px;
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .container{
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        border-radius: 10px;
+    }
+    h1{
+        color:#003366;
+        font-size: 36px;
+    }
+    p{
+        color:#555;
+        font-size: 18px;
+    }
+    .project-card{
+        background: #e3f2fd;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+    .project-card:hover{
+        background: #bbdefb;
+    }
+    .btn{
+        display: inline-block;
+        background: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        text-decoration:none ;
+        border-radius: 10px;
+        transition:0.3s;
+    }
+    .btn:hover{
+        background: #0056b3;
+    }
+    @media(max-width:600px){
+        nav ul li{
+            display: block;
+            margin: 10px 0;
+        }
     }
     </style>
    
 </head>
 <body>
-    <h1> Welcom to my Website...!!! </h1>
-    
-    <p> Here we can explain about some simple arduino projects for the beginers.</p>
-    <ul>
-    <li><a href="arduino1.html" >Automatic Motor Service </a></li>
-    <li><a href="arduino 2.html"> Voice Control Car </a></li>
-    <li><a href=""> DHT11</a></li>
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+
+    <h1> Welcome to Arduino Projects ! </h1>
+    <p>Here we explain some beginner-friendly Arduino Projects !</p>
+      <div class="project-card">
+        <h3>Automatic Motor Service</h3>
+        <p>A simple project to automate motors.</p>
+        <a href="arduino1.html" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Voice Control Car</h3>
+        <p>Control a car using voice commands.</p>
+        <a href="arduino 2.html" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>DHT11 Sensor</h3>
+        <p>Monitor temperature & humidity using DHT11.</p>
+        <a href="arduino 3.html" class="btn">View Project</a>
+      </div>
+    </div>
 </body>
 </html>

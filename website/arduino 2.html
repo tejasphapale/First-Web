@@ -1,37 +1,118 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- 
+    <title>IoT Capstone Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            color: #333;
+        }
+        header {
+            background: #1a245e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            background: #007bff;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #1a245e;
+            text-align: center;
+        }
+        p, h3 {
+            line-height: 1.6;
+        }
+        .components, .algorithm {
+            background: #f0f0f0;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-        <style>
-        div{
-            font-family:Arial, Helvetica, sans-serif;
-            text-align:center;
-            margin:50px;
-            background-attachment: #1a245e;
-        }
-       
-        </style>
-    <div>
-    <h1> IoT Capstone Project </h1>
-    </div>
-    <h2>How it Works:-</h2>
-    <p> A voice-controlled car is a smart vehicle that moves based on voice commands
-         received via a smartphone or microphone module. It integrates Arduino, Bluetooth module, 
-         motor driver, and motors to interpret and execute commands like forward, backward, left, right, and stop
-    </p>
-    <img src="image3.png" alt="circuit diagram" width="700" height="500">
-    <h2>Componants needed:-</h2>
-    <h3>1. Arduino UNO</h3>
-    <h3>2. L293D motor driver</h3>
-    <h3>3. Bluetooth Sensor(HC-05)</h3>
-    <h3>4. 5v DC motor</h3>
-    <h3>5. External power supply</h3>
-    <h3>6. Jumper Cables</h3>
-    <h2>Algorithm</h2>
+    <header>Voice control car</header>
+    <nav>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#components">Components</a>
+        <a href="#algorithm">Algorithm</a>
+    </nav>
     
-    </body>
-    </html>
+    <div class="container">
+        <h2 id="how-it-works">How It Works</h2>
+        <p>A voice-controlled car is a smart vehicle that moves based on voice commands
+            received via a smartphone or microphone module. It integrates Arduino, Bluetooth module, 
+            motor driver, and motors to interpret and execute commands like forward, backward, left, right, and stop.
+        </p>
+        <img src="image3.png" alt="circuit diagram" width="700" height="500">
+        
+        <h2 id="components">Components Needed</h2>
+        <div class="components">
+            <h3>1. Arduino UNO</h3>
+            <h3>2. L293D Motor Driver</h3>
+            <h3>3. Bluetooth Sensor (HC-05)</h3>
+            <h3>4. 5V DC Motor</h3>
+            <h3>5. External Power Supply</h3>
+            <h3>6. Jumper Cables</h3>
+        </div>
+
+        <h2 id="algorithm">Algorithm</h2>
+        <div class="algorithm">
+            <p><b>Step 1:</b> Start</p>
+            <p><b>Step 2:</b> Initialize Arduino and components</p>
+            <p><b>Step 3:</b> Wait for voice command input</p>
+            <p><b>Step 4:</b> Process the command and control motor accordingly</p>
+            <p><b>Step 5:</b> Repeat steps continuously</p>
+            <p><b>Step 6:</b> Stop</p>
+        </div>
+    </div>
+</body>
+</html>
