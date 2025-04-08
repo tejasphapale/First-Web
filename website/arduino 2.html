@@ -84,6 +84,7 @@
         <a href="#how-it-works">How It Works</a>
         <a href="#components">Components</a>
         <a href="#algorithm">Algorithm</a>
+        <a href="#code">Code</a>
     </nav>
     
     <div class="container">
@@ -113,6 +114,83 @@
             <p><b>Step 5:</b> Repeat steps continuously</p>
             <p><b>Step 6:</b> Stop</p>
         </div>
+        <h2 id="code">Code</h2>
+        <pre>
+    #include<SoftwareSerial.h>
+    SoftwareSerial BT(2,3); //TX,RX respectively
+    String readvoice;
+    #define MLa 8 //left motor 1st pin
+    #define MLb 9 //left motor 2nd pin
+    #define MRa 10 //right motor 1st pin
+    #define MRb 11 //right motor 2nd pin 
+    void setup()
+        {
+         BT.begin(9600);
+         Serial.begin(9600);
+         pinMode(MLa,OUTPUT); 
+         pinMode(MLb,OUTPUT);
+         pinMode(MRa,OUTPUT);
+         pinMode(MRb,OUTPUT);
+         }
+    void loop() 
+        {
+         while(BT.available())
+          {       
+             delay(10); //delay added to make thing stable
+             char c=BT.read(); 
+                }
+        if(readvoice.length()>0)
+        {
+         Serial.println(readvoice);
+          if(readvoice=="forward")
+            {
+             //forward
+             digitalWrite(MLa,HIGH);
+             digitalWrite(MLb,LOW);
+             digitalWrite(MRa,HIGH);
+             digitalWrite(MRb,LOW);
+             delay(100); 
+             }
+            else if(readvoice=="back")
+             {
+             //backward
+             digitalWrite(MLa,LOW);
+             digitalWrite(MLb,HIGH);
+             digitalWrite(MRa,LOW);
+             digitalWrite(MRb,HIGH);
+             delay(100); 
+             }
+            else if(readvoice=="turn right")
+             {
+             // Rightturn
+             digitalWrite(MLa,HIGH);
+             digitalWrite(MLb,LOW);
+             digitalWrite(MRa,LOW);
+             digitalWrite(MRb,LOW);
+             delay(100); 
+              }
+             else if(readvoice=="turn left")
+             {
+             //left turn
+             digitalWrite(MLa,LOW); 
+             digitalWrite(MLb,LOW);
+             digitalWrite(MRa,HIGH);
+             digitalWrite(MRb,LOW);
+             delay(100); 
+             }
+            else if(readvoice=="stop")
+             { 
+             //stop
+             digitalWrite(MLa,LOW);
+             digitalWrite(MLb,LOW);
+             digitalWrite(MRa,LOW); 
+             digitalWrite(MRb,LOW);
+             delay(100); 
+             }
+              readvoice="";
+                } //Reset the variable
+                }
+        </pre>
     </div>
 </body>
 </html>

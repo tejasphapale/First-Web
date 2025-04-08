@@ -85,7 +85,9 @@
     </nav>
     <div class="container">
         <h2 id="how-it-works">How It Works</h2>
-        <p>This project is designed for automatic water pumps, smart irrigation systems, or motor control using Arduino.</p>
+        <p>This project is designed for automatic water pumps, smart irrigation systems, 
+            or motor control using Arduino. Below is a simple example that explains how 
+        an automatic motor pump controlled using Arduino and water level sensors.</p>
 
         <h2 id="components">Components Needed</h2>
         <div class="components">
@@ -134,7 +136,41 @@ void loop() {
     if (motorStopped) return;
     long duration;
     int distance;
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  duration = pulseIn(ECHO_PIN, HIGH);
+ 
+  distance = duration * 0.034 / 2;
+  Serial.print("Distance decected by ultrasonic sensor is : ");
+  Serial.print(distance);
+  Serial.println(" cm");
+  if (distance > 20 || distance == 0) {  
+
+    moveForward();
+  } else {  
+
+    stopMotor();
+    motorStopped = true;  
+    Serial.println("Motor Stopped Permanently!");
+  }
+  delay(200);
 }
+
+void moveForward() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+}
+
+void stopMotor() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+}
+
+
         </pre>
     </div>
     
