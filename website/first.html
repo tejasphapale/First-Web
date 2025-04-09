@@ -5,141 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        
-        text-align: center;
-        scroll-behavior: smooth;
-    }
-    
-    /* Fixed Navbar Styling */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #101c65;
-        padding: 15px 0;
-        z-index: 1000; /* Make sure it's on top */
-        box-shadow: 0px 4px 10px rgba(135, 7, 7, 0.1); /* Adding shadow for visual separation */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 30px;
-        padding-right: 30px;
-        
-    }
-
-
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0 ;
-        display:flex;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-        font-size: 18px;
-        font-weight: 700;
-       
-        
-    }
-
-    /* Create space for the fixed nav bar */
-    .container {
-        max-width: 800px;
-        margin: 100px auto 40px auto; /* Added margin-top to compensate for the fixed navbar */
-        padding: 20px;
-       
-        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-        border-radius: 10px;
-    }
-
-    h1 {
-        color: #003366;
-        font-size: 36px;
-    }
-
-    p {
-        color: #555;
-        font-size: 18px;
-    }
-
-    .project-card {
-        background: #e3f2fd;
-        padding: 15px;
-        margin: 15px 0;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
-
-    .project-card:hover {
-        background: #bbdefb;
-    }
-
-    .btn {
-        display: inline-block;
-        background: #007BFF;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
-
-    .btn:hover {
-        background: #0056b3;
-    }
-
-    @media(max-width: 600px) {
-        nav ul li {
-            display: block;
-            margin: 10px 0;
+          html {
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
+        body {
+            background: url(home2.jpg);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+        
+        /* Fixed Navbar Styling */
         nav {
-            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #101c65;
+            padding: 15px 0;
+            z-index: 1000; /* Make sure it's on top */
+            box-shadow: 0px 4px 10px rgba(135, 7, 7, 0.1); /* Adding shadow for visual separation */
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
         }
-    }
 
-    /* Portfolio Section Styling */
-    .portfolio-section {
-        margin-top: 50px;
-        padding: 30px;
-        background: url(demo.jpg);
-        color: rgb(5, 26, 88);
-        border-radius: 10px;
-    }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 ;
+            display:flex;
+        }
 
-    .portfolio-section h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    .portfolio-section h1 {
-        color: rgb(146, 152, 97);
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
+        nav ul li {
+            margin: 0 10px;
+        }
 
-    .portfolio-section .portfolio-item {
-        background: #e3f2fd;
-        padding: 20px;
-        margin: 15px 0;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-    .portfolio-section .portfolio-item:hover {
-        background: #bbdefb;
-    }
+        /* Create space for the fixed nav bar */
+        .container {
+            max-width: 800px;
+            margin: 100px auto 40px auto; /* Added margin-top to compensate for the fixed navbar */
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #24952d;
+            font-size: 36px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .project-card {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            background: #bbdefb;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        @media(max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            nav {
+                padding: 10px;
+            }
+        }
+
+        /* Home Section Styling */
+        #home {
+            background:url(home1.jpg);
+           background-position: 0cqmin; /* Light background for the home section */
+            padding: 50px 0;
+        }
+
+        /* Portfolio Section Styling */
+        .portfolio-section {
+            background:url(home1.jpg);
+           background-position: 0cqmin; /* Light blue background for portfolio section */
+            margin-top: 50px;
+            padding: 30px;
+            color: rgb(5, 26, 88);
+            border-radius: 10px;
+        }
+
+        .portfolio-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .portfolio-section h1 {
+            color: rgb(146, 152, 97);
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-section .portfolio-item {
+            background: #ffffff; /* White background for each portfolio item */
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .portfolio-section .portfolio-item:hover {
+            background: #a7b5c2;
+        }
+
+        /* Projects Section Styling */
+        #projects {
+            background:url(home1.jpg);
+           background-position: 0cqmin; /* Light peach background for projects section */
+            padding: 50px 0;
+        }
+
+        /* Contacts Section Styling */
+        #contacts {
+            background:url(home1.jpg);
+           background-position: 0cqmin; /* Light green background for contacts section */
+            padding: 50px 0;
+        }
 
     </style>
 </head>
@@ -157,31 +177,22 @@
     </div>
 
     <div id="home" class="container">
-        <h1>Welcome to My Portfolio!</h1>
-       
-        <p>Hi friends I'm exited to share the different projects based on
-            IoT using arduino.Also sharing the web development projects and some mobile
-            applications. It is useful to create the some basic projects 
-            which are used in automation. I'm passionate about creating innovative solutions and learning new technologies. Below are some of my recent projects!</p>
-        
-        <!-- Portfolio Section -->
-        <div class="portfolio-section">
-            <h1 >My Portfolio</h1>
-            <div class="portfolio-item">
-                <h3>Arduino Projects</h3>
-                <p>Explore a series of interesting and fun Arduino-based projects, from automation systems to sensor monitoring!</p>
-                <a href="#projects" class="btn">View Projects</a>
-            </div>
-            <div class="portfolio-item">
-                <h3>Web Development</h3>
-                <p>Websites and applications built using modern technologies like HTML, CSS, JavaScript, and React.</p>
-                <a href="#project1" class="btn">View Projects</a>
-            </div>
-            <div class="portfolio-item">
-                <h3>Mobile Applications</h3>
-                <p>Cross-platform mobile apps developed with Flutter, React Native, and more!</p>
-                <a href="#projects" class="btn">View Projects</a>
-            </div>
+        <h1>Welcome to Arduino Projects!</h1>
+        <div class="project-card">
+            <p>Hi friends I'm excited to share the different projects based on
+                IoT using Arduino. Also sharing web development projects and some mobile
+                applications. It is useful to create some basic projects 
+                which are used in automation. I'm passionate about creating innovative solutions and learning new technologies. Below are some of my recent projects!</p>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+        <h1>Some basic projects</h1>
+        <div class="portfolio-item">
+            <h3>Arduino Projects</h3>
+            <p>Explore a series of interesting and fun Arduino-based projects, from automation systems to sensor monitoring!</p>
+            <a href="#projects" class="btn">View Projects</a>
         </div>
     </div>
 
@@ -205,29 +216,23 @@
         </div>
         <div class="project-card">
             <h3>Touch Control Lamp</h3>
-            <p>Control table lamp using touch sensor.</p>
+            <p>Control a table lamp using a touch sensor.</p>
+            <a href="arduino 4.html" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Traffic Light Controlling</h3>
+            <p>Control a traffic light using Arduino.</p>
             <a href="arduino 4.html" class="btn">View Project</a>
         </div>
     </div>
-    <div id="project1" class="container">
-        <h1>Welcome to Web -Devlopment Projects!</h1>
-        <p>Here we explain some beginner-friendly Web Devlopment Projects!</p>
-        <div class="project-card">
-            <h3>Personal Portfolio Website</h3>
-            <p>A simple website to create personal portfolio.</p>
-            <a href="" class="btn"></a>
-        </div>
-        </div>
 
     <div id="contacts" class="container">
         <h1>Contact Me</h1>
         <p>Feel free to get in touch for collaboration or questions!</p>
+        <div class="project-card">
+            <h2>tejas_phapale</h2>
+        </div>
     </div>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('navbar');
-            menu.classList.toggle('show');
-        }
-    </script>
+
 </body>
 </html>
