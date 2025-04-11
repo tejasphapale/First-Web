@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Your Professional Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header (Enhanced) */
+    header {
+      background-color: #333;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 8px 0;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 15px;
+      flex-wrap: nowrap;
+    }
+
+    .navbar a {
+      color: white;
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #f39c12;
+      color: white;
+    }
+
+    /* Hero Section */
+    #hero {
+      padding-top: 120px;
+      background-color: #f39c12;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    #hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    #hero h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background-color: white;
+      color: #f39c12;
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e67e22;
+      color: white;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background-color: #333;
+      color: white;
+      padding: 20px 30px;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    /* Projects Section */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .project {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      width: 45%;
+      text-align: center;
+      min-width: 280px;
+    }
+
+    .project h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .project-link {
+      background-color: #f39c12;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .project-link:hover {
+      background-color: #e67e22;
+    }
+
+    /* Contact Section */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 60%;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #f39c12;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      width: 60%;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #e67e22;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 2px;
+        align-items: center;
+      }
+
+      .navbar {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        font-size: 16px;
+        padding: 6px 10px;
+      }
+
+      #hero h1 {
+        font-size: 36px;
+      }
+
+      #hero p {
+        font-size: 16px;
+      }
+
+      .project {
+        width: 100%;
+      }
+
+      .contact-form input,
+      .contact-form textarea,
+      .contact-form button {
+        width: 90%;
+      }
+
+      .skills-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        height: 35px;
+      }
+
+      .cta-button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      #hero h1 {
+        font-size: 28px;
+      }
+
+      #hero p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container container">
+      <img src="home3.jpg" alt="logo" class="logo" />
+      <nav class="navbar">
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <img src="port1.jpg" height="10px" width="300" alt="me" />
+      <h1>Hi, I'm Tejas</h1>
+      <p>Web Developer | Designer | Sketcher </p>
+      <a href="#contact" class="cta-button">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate web developer with a keen eye for design. I specialize in building responsive, user-friendly websites. My goal is to create websites that are both functional and aesthetically pleasing, while solving real-world problems.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill">HTML</div>
+        <div class="skill">DSA</div>
+        <div class="skill">IoT</div>
+        <div class="skill">Responsive Design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project">
+         
+          <p>A description of your project. Technologies used: HTML, CSS, JavaScript.</p>
+          <a href="first.html" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="#" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Tejas. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
