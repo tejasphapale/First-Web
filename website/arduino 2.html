@@ -20,6 +20,11 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         nav {
@@ -27,7 +32,7 @@
             padding: 10px;
             text-align: center;
             position: sticky;
-            top: 0;
+            top: 60px;
             z-index: 1000;
         }
         nav a {
@@ -75,6 +80,69 @@
         }
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 15px;
+            }
+            nav {
+                padding: 15px;
+            }
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            .container {
+                margin-top: 100px; /* Adjusted for fixed header */
+                padding: 15px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .components, .algorithm {
+                padding: 10px;
+            }
+            img {
+                margin-top: 10px;
+            }
+            pre {
+                font-size: 14px; /* Reduce font size for smaller screens */
+                padding: 10px;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 18px;
+                padding: 10px;
+            }
+            nav {
+                padding: 10px;
+            }
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+            .container {
+                margin-top: 120px; /* Adjusted for fixed header */
+                padding: 10px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .components, .algorithm {
+                padding: 8px;
+            }
+            img {
+                margin-top: 5px;
+            }
+            pre {
+                font-size: 12px; /* Reduce font size for smaller screens */
+            }
         }
     </style>
 </head>

@@ -19,7 +19,6 @@
       color: #333;
       line-height: 1.6;
       background-color: #f4f4f4;
-      
     }
 
     .container {
@@ -33,7 +32,7 @@
       color: inherit;
     }
 
-    /* Header (Enhanced) */
+    /* Header */
     header {
       background-color: #333;
       position: fixed;
@@ -49,11 +48,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
 
     .logo {
-      height: 40px;
+      max-height: 40px;
       width: auto;
     }
 
@@ -75,6 +74,45 @@
       background-color: #f39c12;
       color: white;
     }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+    }
+  .title-box {
+  background-color: #fff;
+  border: 2px solid #f39c12;
+  padding: 1px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  animation: slideIn 1s ease forwards;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  flex-grow:initial;
+}
+
+.title-box h3 {
+  font-size: 24px;
+  color: #f39c12;
+  margin: 0;
+  align-items: center;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
     /* Hero Section */
     #hero {
@@ -237,21 +275,28 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        gap: 2px;
-        align-items: center;
+      .menu-toggle {
+        display: block;
       }
 
       .navbar {
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        display: none;
+      }
+
+      .navbar.active {
+        display: flex;
       }
 
       .navbar a {
-        font-size: 16px;
-        padding: 6px 10px;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
       }
 
       #hero h1 {
@@ -278,10 +323,13 @@
       }
     }
 
-    @media (max-width: 480px) {
-      .logo {
-        height: 35px;
-      }
+    @media (max-width: 768px) {
+  .logo {
+    height: 90px;
+    width: auto;
+  }
+}
+
 
       .cta-button {
         padding: 10px 20px;
@@ -295,7 +343,33 @@
       #hero p {
         font-size: 14px;
       }
-    }
+
+      .container {
+        width: 90%;
+        padding: 0 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .skill {
+        font-size: 16px;
+        padding: 15px 20px;
+      }
+
+      .project h3 {
+        font-size: 20px;
+      }
+
+      .project p {
+        font-size: 14px;
+      }
+    
   </style>
 </head>
 <body>
@@ -303,8 +377,13 @@
   <!-- Header -->
   <header>
     <div class="header-container container">
-      <img src="home3.jpg" alt="logo" class="logo" />
-      <nav class="navbar">
+      <img src="home3.jpg" alt="logo" class="logo" height="200px"   />
+      <div class="title-box">
+        <h3>Personal Portfolio...!</h3>
+      </div>
+      
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav class="navbar" id="navbar">
         <a href="#about">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -316,9 +395,9 @@
   <!-- Hero Section -->
   <section id="hero">
     <div class="container">
-      <img src="port1.jpg" height="10px" width="300" alt="me" />
+      <img src="port1.jpg" width="300" alt="me" />
       <h1>Hi, I'm Tejas</h1>
-      <p>Web Developer | Designer | Sketcher </p>
+      <p>Web Developer | Designer | Sketcher</p>
       <a href="#contact" class="cta-button">Get in Touch</a>
     </div>
   </section>
@@ -352,8 +431,9 @@
       <h2>Projects</h2>
       <div class="projects-container">
         <div class="project">
-         
-          <p>A description of your project. Technologies used: HTML, CSS, JavaScript.</p>
+          <p>A description of your project. Technologies used: HTML, CSS, JavaScript.
+            The Internet of Things (IoT) refers to the interconnection of everyday devices to the internet, allowing them to collect, exchange, and process data
+          </p>
           <a href="first.html" class="project-link">View Project</a>
         </div>
       </div>
@@ -377,6 +457,16 @@
   <footer>
     <p>&copy; 2025 Tejas. All rights reserved.</p>
   </footer>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

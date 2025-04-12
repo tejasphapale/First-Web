@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>touch sonsor project</title>
+    <title>Touch Control Lamp using Arduino</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,24 +12,31 @@
             padding: 0;
             background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
             color: #333;
+            padding-top: 120px; /* Adjusted for fixed header */
         }
         header {
             background: #1a245e;
             color: white;
             padding: 20px;
             text-align: center;
-            
             font-size: 24px;
             font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            
+            position: fixed; /* Make the header fixed */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999; /* Ensure it's on top of other content */
         }
         nav {
             background: #007bff;
-           
             padding: 10px;
             text-align: center;
-           
+            position: fixed; /* Fixed navbar */
+            top: 60px; /* Adjusted for fixed header height */
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure it's on top of other content */
         }
         nav a {
             color: white;
@@ -75,8 +82,71 @@
             transform: scale(1.05);
         }
         html {
-        scroll-behavior: smooth;
-       }
+            scroll-behavior: smooth;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 15px;
+            }
+            nav {
+                padding: 15px;
+            }
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            .container {
+                margin-top: 100px; /* Adjusted for fixed header and navbar */
+                padding: 15px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .components, .algorithm {
+                padding: 10px;
+            }
+            img {
+                margin-top: 10px;
+            }
+            pre {
+                font-size: 14px; /* Reduce font size for smaller screens */
+                padding: 10px;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 18px;
+                padding: 10px;
+            }
+            nav {
+                padding: 10px;
+            }
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+            .container {
+                margin-top: 120px; /* Adjusted for fixed header and navbar */
+                padding: 10px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .components, .algorithm {
+                padding: 8px;
+            }
+            img {
+                margin-top: 5px;
+            }
+            pre {
+                font-size: 12px; /* Reduce font size for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,12 +161,7 @@
     </nav>
     <div class="container">
         <h2 id="how-it-works">How It Works</h2>
-        <p>THis projects aims to create a lamp that can be operated by
-            touch sensor.It will incorporate cutting-edge touch technology
-            to provide a convenient and modron lightisimplying solutions.
-            The lamp's are designed will focus on both functionality and 
-            asthetics, offering users a stylish and user-friendly lighting experience.
-        </p>
+        <p>This project aims to create a lamp that can be operated by a touch sensor. It incorporates cutting-edge touch technology to provide a convenient and modern lighting solution. The lamp's design will focus on both functionality and aesthetics, offering users a stylish and user-friendly lighting experience.</p>
 
         <h2 id="components">Components Needed</h2>
         <div class="components">
@@ -105,57 +170,55 @@
             <h4>3. Touch Sensor</h4>
             <h4>4. 5V Battery</h4>
             <h4>5. LED or Lamp</h4>
-            <h4>6. MOFSET or Replay module</h4>
+            <h4>6. MOSFET or Relay Module</h4>
             <h4>7. Jumper Cables (M-M, M-F, F-F)</h4>
         </div>
+
         <h2 id="circuit">Circuit</h2>
-        <img src="4.2.png" alt="Flowchart">
+        <img src="4.2.png" alt="Circuit Diagram">
 
         <h2 id="algorithm">Algorithm</h2>
         <div class="algorithm">
             <p><b>Step 1:</b> Start</p>
             <p><b>Step 2:</b> Initialize Arduino and the pins</p>
             <p><b>Step 3:</b> Read the sensor value</p>
-            <p><b>Step 4:</b>Check given conditions. As per the requirements </p>
+            <p><b>Step 4:</b> Check the given conditions as per the requirements</p>
             <p><b>Step 5:</b> Repeat steps continuously</p>
             <p><b>Step 6:</b> Stop</p>
-            
         </div>
 
         <h2 id="flowchart">Flowchart</h2>
         <img src="4.1.png" alt="Flowchart">
-        
+
         <h2 id="code">Code</h2>
         <pre>
-        const int touchPin = 2;     // TTP223 OUT pin
-        const int lampPin = 8;      // LED or Relay pin
-        
-        bool lampState = false;     // Initial state OFF
-        bool lastTouchState = LOW;  // To detect state change
-            
-        void setup() {
-            pinMode(touchPin, INPUT);
-            pinMode(lampPin, OUTPUT);
-            digitalWrite(lampPin, LOW); // Lamp OFF at start
-            Serial.begin(9600);
-            }
-            
-        void loop() {
-            bool touchState = digitalRead(touchPin);
-            
-            // Detect rising edge (LOW to HIGH)
-        if (touchState == HIGH && lastTouchState == LOW) {
-            lampState = !lampState; // Toggle state
-            digitalWrite(lampPin, lampState ? HIGH : LOW);
-            Serial.println(lampState ? "Lamp ON" : "Lamp OFF");
-            delay(300); // Debounce delay
-              }
-            
-            lastTouchState = touchState;
-            }
+const int touchPin = 2;     // TTP223 OUT pin
+const int lampPin = 8;      // LED or Relay pin
 
+bool lampState = false;     // Initial state OFF
+bool lastTouchState = LOW;  // To detect state change
+
+void setup() {
+    pinMode(touchPin, INPUT);
+    pinMode(lampPin, OUTPUT);
+    digitalWrite(lampPin, LOW); // Lamp OFF at start
+    Serial.begin(9600);
+}
+
+void loop() {
+    bool touchState = digitalRead(touchPin);
+    
+    // Detect rising edge (LOW to HIGH)
+    if (touchState == HIGH && lastTouchState == LOW) {
+        lampState = !lampState; // Toggle state
+        digitalWrite(lampPin, lampState ? HIGH : LOW);
+        Serial.println(lampState ? "Lamp ON" : "Lamp OFF");
+        delay(300); // Debounce delay
+    }
+    
+    lastTouchState = touchState;
+}
         </pre>
     </div>
-    
 </body>
 </html>

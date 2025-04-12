@@ -84,6 +84,68 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                font-size: 20px;
+                padding: 15px;
+            }
+            nav {
+                padding: 15px;
+            }
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            .container {
+                margin-top: 100px; /* Adjusted for fixed header and navbar */
+                padding: 15px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .components, .algorithm {
+                padding: 10px;
+            }
+            img {
+                margin-top: 10px;
+            }
+            pre {
+                font-size: 14px; /* Reduce font size for smaller screens */
+                padding: 10px;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 18px;
+                padding: 10px;
+            }
+            nav {
+                padding: 10px;
+            }
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+            .container {
+                margin-top: 120px; /* Adjusted for fixed header and navbar */
+                padding: 10px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .components, .algorithm {
+                padding: 8px;
+            }
+            img {
+                margin-top: 5px;
+            }
+            pre {
+                font-size: 12px; /* Reduce font size for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,6 +153,7 @@
     <nav>
         <a href="#how-it-works">How It Works</a>
         <a href="#components">Components</a>
+        <a href="#circuit diagram">Circuit Diagram</a>
         <a href="#algorithm">Algorithm</a>
         <a href="#code">Code</a>
     </nav>
@@ -99,7 +162,8 @@
         <p>This project is designed for automatic water pumps, smart irrigation systems, 
             or motor control using Arduino. Below is a simple example that explains how 
         an automatic motor pump controlled using Arduino and water level sensors.</p>
-
+        <h2 id="circuit diagram">Circuit Diagram</h2>
+        <img src="motor.jpg" alt="">
         <h2 id="components">Components Needed</h2>
         <div class="components">
             <h4>1. Arduino UNO</h4>
